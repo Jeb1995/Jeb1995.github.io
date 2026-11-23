@@ -10,8 +10,7 @@
 <meta property="og:title" content="Jeby — Performance & Automation Test Engineer">
 <meta property="og:description" content="Test Engineer with 9 years of experience across performance and automation testing — 6.5 years in performance, 2.5 years in automation, across insurance and banking platforms.">
 <meta property="og:type" content="website">
-<!-- EDIT ME: set this to your live GitHub Pages URL once published -->
-<meta property="og:url" content="https://yourusername.github.io/">
+<meta property="og:url" content="https://jeb1995.github.io/">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -136,7 +135,15 @@
     display:flex;align-items:center;justify-content:center;overflow:hidden;
     box-shadow:0 0 60px rgba(94,234,212,0.1);
   }
-  .id-frame img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .id-frame img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%;filter:saturate(1.05) contrast(1.03);}
+  .id-frame::before{ /* tint + bottom fade so the bright photo sits in the dark theme */
+    content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:
+      linear-gradient(180deg,transparent 55%,rgba(7,11,22,0.55)),
+      linear-gradient(135deg,rgba(124,58,237,0.12),rgba(20,184,166,0.08));
+    mix-blend-mode:normal;
+  }
+  .id-frame{box-shadow:0 0 0 1px rgba(94,234,212,0.25), 0 0 70px rgba(94,234,212,0.16), 0 0 120px rgba(124,58,237,0.14);}
   .id-initials{
     font-family:'JetBrains Mono',monospace;font-weight:700;font-size:64px;letter-spacing:-2px;
     background:linear-gradient(135deg,var(--teal),var(--violet));
@@ -145,7 +152,7 @@
   .id-frame::after{ /* sweeping scan bar */
     content:'';position:absolute;left:0;right:0;height:60px;top:-60px;
     background:linear-gradient(180deg,transparent,rgba(94,234,212,0.16),transparent);
-    animation:scan 4.5s linear infinite;
+    animation:scan 4.5s linear infinite;z-index:3;
   }
   @keyframes scan{to{top:100%;}}
   .id-tag{
@@ -247,10 +254,11 @@
   }
   .ey-badge img{width:100%;height:100%;object-fit:contain;}
   .exp-badge-text{
-    flex-shrink:0;width:68px;height:68px;background:#18233B;border-radius:10px;
-    display:flex;align-items:center;justify-content:center;
-    font-family:'JetBrains Mono',monospace;font-weight:700;font-size:19px;color:var(--text);
+    position:relative;flex-shrink:0;width:68px;height:68px;background:#FFFFFF;border-radius:10px;
+    display:flex;align-items:center;justify-content:center;overflow:hidden;
+    font-family:'JetBrains Mono',monospace;font-weight:700;font-size:19px;color:#0B1120;
   }
+  .exp-badge-text img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;background:#fff;}
   .exp-title{font-size:18px;font-weight:700;margin-bottom:2px;}
   .exp-meta{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--teal);margin-bottom:12px;letter-spacing:0.5px;}
   .exp-card p{color:var(--muted);font-size:14.5px;}
@@ -378,7 +386,7 @@
       <div class="card skill-card auto reveal">
         <div class="k">Automation Testing · 2.5 yrs</div>
         <div class="d">Regression coverage that runs without you.</div>
-        <div class="chips"><span>Selenium + Java (Web)</span><span>Appium + Java (Mobile)</span><span>SeeTest (Mobile)</span><span>Playwright + JavaScript</span></div>
+        <div class="chips"><span>Selenium + Java (Web)</span><span>Selenium + C#</span><span>Appium + Java (Mobile)</span><span>SeeTest (Mobile)</span><span>Playwright + JavaScript</span></div>
       </div>
       <div class="card skill-card mon reveal">
         <div class="k">Monitoring &amp; APM</div>
@@ -414,11 +422,15 @@
 
       <div class="tl-item past reveal">
         <div class="card exp-card">
-          <div class="exp-badge-text">TH</div>
+          <!-- Logo: save the TestHouse logo as testhouse-logo.png next to index.html. If missing, the "TH" badge shows instead. -->
+          <div class="exp-badge-text">
+            <span class="th-fallback">TH</span>
+            <img src="testhouse-logo.png" alt="TestHouse logo" onerror="this.remove()">
+          </div>
           <div>
-            <div class="exp-title">[Add your role — edit me] — TestHouse</div>
+            <div class="exp-title">Junior Test Engineer → Test Engineer — TestHouse</div>
             <div class="exp-meta">SEPTEMBER 2017 — MARCH 2020</div>
-            <p>[Add a short description of your work here — edit me]</p>
+            <p>Led automation testing for web and mobile applications using Selenium with Java and C#, SeeTest and Appium.</p>
           </div>
         </div>
       </div>
